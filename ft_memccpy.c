@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 14:41:55 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/21 16:40:33 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/01/21 16:48:40 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,12 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	i = 0;
 	if ((n > 0) && (dst || src))
 	{
-
 		while ((i < n) && *(unsigned char *)(src + i) != (unsigned char)c)
 		{
 			*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
 			i++;
 		}
 	}
-	//	printf("%s\n",dst);
-	
 	if (i == n)
 	{
 		return (NULL);
