@@ -6,7 +6,7 @@
 #    By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 20:06:06 by mmirabet          #+#    #+#              #
-#    Updated: 2020/01/21 11:09:02 by mmirabet         ###   ########.fr        #
+#    Updated: 2020/01/21 11:32:14 by mmirabet         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -16,7 +16,7 @@ SRCDIR		= .
 LIBDIR		= .
 INCDIR		= .
 
-SRC			= ft_memset ft_bzero
+SRC			= ft_memset ft_bzero ft_memcpy
 
 SRCS		= $(addsuffix .c, ${SRC})
 OBJS		= $(addsuffix .o, ${SRC})
