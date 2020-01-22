@@ -6,7 +6,7 @@
 #    By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 20:06:06 by mmirabet          #+#    #+#              #
-#    Updated: 2020/01/22 14:20:07 by mmirabet         ###   ########.fr        #
+#    Updated: 2020/01/22 15:25:57 by mmirabet         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -17,7 +17,7 @@ LIBDIR		= .
 INCDIR		= .
 
 SRC			= ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
-			  ft_memcmp ft_strlen ft_strlcpy ft_strlcat ft_strchr
+			  ft_memcmp ft_strlen ft_strlcpy ft_strlcat ft_strchr ft_strrchr
 
 SRCS		= $(addsuffix .c, ${SRC})
 OBJS		= $(addsuffix .o, ${SRC})
