@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 09:21:12 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/22 11:39:11 by mmirabet         ###   ########.fr       */
+/*   Created: 2020/01/22 11:32:02 by mmirabet          #+#    #+#             */
+/*   Updated: 2020/01/22 13:00:46 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,23 @@ static size_t	mystrlen(const char *s)
 	return (i);
 }
 
-size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t			ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
+	size_t	srclen;
+	size_t	dstlen;
 
 	i = 0;
-	if (dstsize)
-	{
-		while (i < (dstsize - 1) && *(src + i))
+	dstlen = mystrlen(dst);
+	srclen = mystrlen(src);
+	if (dstlen > dstsize)
+		return (dstsize + srclen);
+	if (dstsize && dstlen < (dstsize - 1))
+		while (i < (dstsize - dstlen - 1) && *(src + i))
 		{
-			*(dst + i) = *(src + i);
+			*(dst + dstlen + i) = *(src + i);
 			i++;
 		}
-		*(dst + i) = 0;
-	}
-	return (mystrlen(src));
+	*(dst + dstlen + i) = 0;
+	return (dstlen + srclen);
 }
