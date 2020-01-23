@@ -6,7 +6,7 @@
 #    By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 20:06:06 by mmirabet          #+#    #+#              #
-#    Updated: 2020/01/23 16:16:00 by mmirabet         ###   ########.fr        #
+#    Updated: 2020/01/23 19:14:47 by mmirabet         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -18,7 +18,7 @@ INCDIR		= .
 
 SRC			= ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 			  ft_memcmp ft_strlen ft_strlcpy ft_strlcat ft_strchr ft_strrchr \
-			  ft_strnstr ft_strncmp ft_atoi
+			  ft_strnstr ft_strncmp ft_atoi ft_isalpha
 
 SRCS		= $(addsuffix .c, ${SRC})
 OBJS		= $(addsuffix .o, ${SRC})
@@ -35,11 +35,11 @@ AT			= @
 .c.o:		
 			${AT}${CC} ${CFLAGS} -I $(INCDIR) -c $(addprefix $(SRCDIR)/, $(SRCS))
 
-${NAME}:	${OBJS}		
+all:		${NAME}
+
+$(NAME):	${OBJS}		
 			${AT}ar -rc ${NAME} ${OBJS}
 			${AT}ranlib ${NAME}
-
-all:		${NAME}
 
 clean:
 			${RM} ${OBJS}
