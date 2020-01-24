@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 09:21:12 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/24 08:20:37 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/01/24 12:39:03 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	lensrc;
 
-	i = 0;
-	while (src[i])
-		i++;
-	lensrc = i;
+	lensrc = 0;
+	if (!dst || !src)
+		return (0);
+	while (src[lensrc])
+		lensrc++;
 	if (!dstsize)
 		return (lensrc);
 	i = 0;
