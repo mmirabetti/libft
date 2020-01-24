@@ -6,16 +6,15 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 15:36:22 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/24 08:05:47 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/01/24 08:20:12 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int		ft_atoi(const char *str)
 {
-    int	i;
+	int	i;
 	int	mult;
 
 	i = 0;
