@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 16:26:52 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/24 16:38:10 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/01/27 16:11:41 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@
 # include <stdlib.h>
 # include <ctype.h>
 # include <limits.h>
+
+typedef struct s_substringposition	t_substr;
+struct	s_substringposition
+{
+	char	*start;
+	char	*len;
+};
+
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -45,4 +53,5 @@ char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
 #endif
