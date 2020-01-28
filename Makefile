@@ -6,7 +6,7 @@
 #    By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 20:06:06 by mmirabet          #+#    #+#              #
-#    Updated: 2020/01/28 15:03:36 by mmirabet         ###   ########.fr        #
+#    Updated: 2020/01/28 15:36:56 by mmirabet         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -21,7 +21,7 @@ SRC			= ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 			  ft_strnstr ft_strncmp ft_atoi ft_isalpha ft_isdigit ft_isalnum \
 			  ft_isascii ft_isprint ft_toupper ft_tolower ft_calloc ft_strdup \
 			  ft_substr ft_strjoin ft_strtrim ft_split ft_itoa ft_strmapi \
-			  ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd
+			  ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd ft_lstnew \
 
 SRCS		= $(addsuffix .c, ${SRC})
 OBJS		= $(addsuffix .o, ${SRC})
