@@ -6,7 +6,7 @@
 #    By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 20:06:06 by mmirabet          #+#    #+#              #
-#    Updated: 2020/01/28 11:32:54 by mmirabet         ###   ########.fr        #
+#    Updated: 2020/01/28 11:47:58 by mmirabet         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,7 +14,7 @@ NAME		= libft.a
 
 SRCDIR		= .
 LIBDIR		= .
-INCDIR		= .
+INCDIR		= .'
 
 SRC			= ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 			  ft_memcmp ft_strlen ft_strlcpy ft_strlcat ft_strchr ft_strrchr \
