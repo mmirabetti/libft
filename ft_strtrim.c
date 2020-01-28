@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 15:15:25 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/24 18:07:53 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/01/28 08:53:31 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,42 +23,31 @@ static size_t	ft_isonset(char const *set, char character)
 	return (0);
 }
 
-int	ft_findidx(char const *s, char const *set, char direction)
-{
-	 int	i;
-
-	i = 0;
-	if (direction == 'r')
-		while (s[i] && ft_isonset(set, s[i]))
-			i++;
-	else if (direction == 'e')
-	{
-		while (s[i])
-			i++;
-		if (i > 0)
-			i--;
-		while (s[i] && --i >= 0 && ft_isonset(set, s[i]))
-			;
-	}
-	return (i);
-}
-
 char			*ft_strtrim(char const *s1, char const *set)
 {
-	int	start;
-	int	len;
+	char	*start;
+	char	*end;
 	char	*trimmed;
 
 	if (!s1)
 		return (NULL);
-	start = ft_findidx(s1, set, 'r');
-	len = ft_findidx(s1, set, 'e') - start + 1;
-	if (len < 0)
+	while (*s1 && ft_isonset(set, *s1))
+		s1++;
+	if (!*s1)
 	{
-		start = 0;
-		len = 1;
-	}	
-	if (!(trimmed = ft_substr(s1, start, len)))
+		if (!(trimmed = (char *)malloc(1 * sizeof(char *))))
+			return (NULL);
+		trimmed[0] = 0;
+		return (trimmed);
+	}
+	start = (char *)s1;
+	while (*s1)
+	{
+		if (!ft_isonset(set, *s1))
+			end = (char *)s1;
+		s1++;
+	}
+	if (!(trimmed = ft_substr(start, 0, end - start + 1)))
 		return (NULL);
 	return (trimmed);
 }
