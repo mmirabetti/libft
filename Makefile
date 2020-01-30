@@ -6,11 +6,13 @@
 #    By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 20:06:06 by mmirabet          #+#    #+#              #
-#    Updated: 2020/01/30 10:08:14 by mmirabet         ###   ########.fr        #
+#    Updated: 2020/01/30 11:44:48 by mmirabet         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME		= libft.a
+
+HEADER		= libft.h
 
 SRCDIR		= .
 LIBDIR		= .
@@ -21,13 +23,16 @@ SRC			= ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 			  ft_strnstr ft_strncmp ft_atoi ft_isalpha ft_isdigit ft_isalnum \
 			  ft_isascii ft_isprint ft_toupper ft_tolower ft_calloc ft_strdup \
 			  ft_substr ft_strjoin ft_strtrim ft_split ft_itoa ft_strmapi \
-			  ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd ft_lstnew \
-			  ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back ft_lstdelone \
-			  ft_lstclear ft_lstiter ft_lstmap
+			  ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd 
 
-SRCS		= $(addsuffix .c, ${SRC})
-OBJS		= $(addsuffix .o, ${SRC})
-#OBJS		= ${SRCS:.c=.o}
+SRC_BONUS	= ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back \
+			  ft_lstdelone ft_lstclear ft_lstiter ft_lstmap
+
+SRCS		= $(addsuffix .c, $(SRC))
+OBJS		= $(addsuffix .o, $(SRC))
+
+SRCS_BONUS	= $(addsuffix .c, $(SRC_BONUS))
+OBJS_BONUS 	= $(addsuffix .o, $(SRC_BONUS))
 
 CC			= gcc
 
@@ -37,21 +42,27 @@ RM			= rm -f
 
 AT			= @
 
-.c.o:		
-			${AT}${CC} ${CFLAGS} -I $(INCDIR) -c $(addprefix $(SRCDIR)/, $(SRCS))
+.c.o:		$(HEADER)
+			$(AT)$(CC) $(CFLAGS) -I $(INCDIR) -c $(addprefix $(SRCDIR)/, $(SRCS) \
+			addprefix $(SRCDIR)/, $(SRCS_BONUS))
 
-all:		${NAME}
+all:		$(NAME)
 
-$(NAME):	${OBJS}		
-			${AT}ar -rc ${NAME} ${OBJS}
-			${AT}ranlib ${NAME}
+$(NAME):	$(OBJS)		
+			$(AT)ar -rc $(NAME) $(OBJS)
+			$(AT)ranlib $(NAME)
+
+bonus:		$(NAME) $(OBJS_BONUS)
+			$(AT)ar -rc $(NAME) $(OBJS_BONUS)
+			$(AT)ranlib $(NAME)
+
 
 clean:
-			${RM} ${OBJS}
-			${RM} *~
+			$(RM) $(OBJS) $(OBJS_BONUS)
+			$(RM) *~
 
 fclean:		clean
-			${RM} ${NAME}
+			$(RM) $(NAME)
 
 re:			fclean all
 
