@@ -43,8 +43,7 @@ RM			= rm -f
 AT			= @
 
 .c.o:		$(HEADER)
-			$(AT)$(CC) $(CFLAGS) -I $(INCDIR) -c $(addprefix $(SRCDIR)/, $(SRCS) \
-			addprefix $(SRCDIR)/, $(SRCS_BONUS))
+			$(AT)$(CC) $(CFLAGS) -I $(INCDIR) -c $(addprefix $(SRCDIR)/, $<)
 
 all:		$(NAME)
 

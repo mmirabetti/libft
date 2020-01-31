@@ -6,18 +6,18 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 11:32:02 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/22 13:00:46 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/01/31 09:57:43 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	mystrlen(const char *s)
+static size_t	mystrnlen(const char *s, size_t maxlen)
 {
 	size_t	i;
 
 	i = 0;
-	while (*(s + i))
+	while (i < maxlen && s[i])
 		i++;
 	return (i);
 }
@@ -29,16 +29,21 @@ size_t			ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dstlen;
 
 	i = 0;
-	dstlen = mystrlen(dst);
-	srclen = mystrlen(src);
-	if (dstlen > dstsize)
-		return (dstsize + srclen);
-	if (dstsize && dstlen < (dstsize - 1))
-		while (i < (dstsize - dstlen - 1) && *(src + i))
+	dstlen = 0;
+	srclen = 0;
+	while (src[srclen])
+		srclen++;
+	dstlen = mystrnlen(dst, dstsize);
+	if (!dstsize)
+		return (srclen);
+	if (dstlen != dstsize)
+	{
+		while (i < (dstsize - dstlen - 1) && src[i])
 		{
-			*(dst + dstlen + i) = *(src + i);
+			*(dst + dstlen + i) = src[i];
 			i++;
 		}
-	*(dst + dstlen + i) = 0;
+		*(dst + dstlen + i) = 0;
+	}
 	return (dstlen + srclen);
 }
