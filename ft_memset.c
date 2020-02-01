@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	if (len >= 0)
+	if (len > 0)
 	{
 		while (len--)
 		{
