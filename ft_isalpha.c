@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 17:34:01 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/23 19:13:18 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/02 11:02:01 by mauricio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int		ft_isalpha(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	unsigned short int	aux;
+
+	aux = c;
+	if ((aux >= 65 && aux <= 90) || (aux >= 97 && aux <= 122))
 		return (1);
 	else
 		return (0);
