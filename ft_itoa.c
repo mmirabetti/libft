@@ -6,13 +6,13 @@
 /*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 09:07:45 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/28 11:44:56 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/03 18:59:03 by mauricio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*my_ft_charalloc(long aux, int size, int negative, char *str)
+static char	*my_ft_charalloc(long aux, int size, int negative, char *str)
 {
 	if (!(str = (char *)malloc(size + 1 + negative)))
 		return (NULL);

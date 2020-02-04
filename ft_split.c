@@ -6,13 +6,13 @@
 /*   By: mmirabet <mmirabet@student.42sp.or...>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 11:14:42 by mauricio          #+#    #+#             */
-/*   Updated: 2020/01/27 21:03:19 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/02 17:01:49 by mauricio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_swipenalloc(char const *s, char c, size_t n, char **ptr)
+static char	**ft_swipenalloc(char const *s, char c, size_t n, char **ptr)
 {
 	char	*start;
 	char	*end;
@@ -42,7 +42,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**splitted;
 
-	if (!s)
+	if (!s || c == '\0')
 		return (NULL);
 	splitted = NULL;
 	if (!(splitted = ft_swipenalloc(s, c, 0, splitted)))

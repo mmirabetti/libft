@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 15:15:25 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/28 08:53:31 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/02 16:56:54 by mauricio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	char	*end;
 	char	*trimmed;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
 	while (*s1 && ft_isonset(set, *s1))
 		s1++;
