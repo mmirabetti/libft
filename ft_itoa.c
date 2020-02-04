@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 09:07:45 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/02/03 18:59:03 by mauricio         ###   ########.fr       */
+/*   Updated: 2020/02/04 17:24:02 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static char	*my_ft_charalloc(long aux, int size, int negative, char *str)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*p_str;
 	int		negative;
@@ -32,7 +32,7 @@ char	*ft_itoa(int n)
 	long	aux;
 
 	negative = 0;
-	aux = n;
+	aux = (long)n;
 	if (n < 0)
 	{
 		negative = 1;

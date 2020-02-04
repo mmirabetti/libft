@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 08:40:54 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/02/02 16:33:35 by mauricio         ###   ########.fr       */
+/*   Updated: 2020/02/04 08:22:47 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_toupper(int c)
 {
-	unsigned short int	aux;
-
-	aux = c;
-	return (aux + (aux >= 97 && aux <= 122) * ('A' - 'a'));
+	if (c >= 'a' && c <= 'z')
+		return (c - ('a' - 'A'));
+	else
+		return (c);
 }

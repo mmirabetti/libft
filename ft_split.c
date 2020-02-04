@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.or...>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 11:14:42 by mauricio          #+#    #+#             */
-/*   Updated: 2020/02/02 17:01:49 by mauricio         ###   ########.fr       */
+/*   Updated: 2020/02/04 08:24:17 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	**ft_swipenalloc(char const *s, char c, size_t n, char **ptr)
 	return (ptr);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	**splitted;
 
