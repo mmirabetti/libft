@@ -6,12 +6,11 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 14:41:55 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/21 16:48:40 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/07 10:23:44 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

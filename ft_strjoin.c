@@ -3,38 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
+/*   By: mauricio <mmirabet@student.42sp.or...>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/24 14:02:28 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/02/04 16:47:30 by mmirabet         ###   ########.fr       */
+/*   Created: 2020/02/05 10:59:00 by mauricio          #+#    #+#             */
+/*   Updated: 2020/02/07 10:46:46 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
 	char	*joined;
+	size_t	to_copy;
 
-	if (!s1 || !s2)
+	to_copy = (!s1) ? 0 : ft_strlen(s1);
+	to_copy += (!s2) ? 0 : ft_strlen(s2);
+	if (!(joined = (char *)malloc(sizeof(char) * to_copy + 1)))
 		return (NULL);
-	if (!(joined = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) *
-							sizeof(char))))
-		return (NULL);
-	i = 0;
-	while (s1 && s1[i])
-	{
-		joined[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (s2 && s2[j])
-	{
-		joined[i + j] = s2[j];
-		j++;
-	}
-	joined[i + j] = '\0';
+	*joined = '\0';
+	if (s1)
+		ft_strlcat(joined, s1, to_copy + 1);
+	if (s2)
+		ft_strlcat(joined, s2, to_copy + 1);
+	joined[to_copy] = '\0';
 	return (joined);
 }

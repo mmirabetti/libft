@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 08:47:35 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/02/04 08:06:51 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/07 08:24:50 by mauricio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
+	if (ft_isupper(c))
 		return (c + ('a' - 'A'));
 	else
 		return (c);

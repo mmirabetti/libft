@@ -3,52 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mauricio <mmirabet@student.42sp.or...>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/28 09:07:45 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/02/04 17:24:02 by mmirabet         ###   ########.fr       */
+/*   Created: 2020/02/06 17:00:21 by mauricio          #+#    #+#             */
+/*   Updated: 2020/02/07 10:12:45 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*my_ft_charalloc(long aux, int size, int negative, char *str)
+static size_t	my_countdigits(int n)
 {
-	if (!(str = (char *)malloc(size + 1 + negative)))
-		return (NULL);
-	str[size + negative] = 0;
-	if (negative)
-		str[0] = '-';
-	if (!aux)
-		str[0] = '0';
-	return (str);
+	size_t	count;
+	long	aux;
+
+	aux = (long)n;
+	count = 0;
+	if (n <= 0)
+		count++;
+	while (aux)
+	{
+		count++;
+		aux /= 10;
+	}
+	return (count);
 }
 
-char		*ft_itoa(int n)
+static char		*my_allocatenprepare(size_t size, char negative)
 {
-	char	*p_str;
-	int		negative;
+	char	*string;
+
+	if (!(string = (char *)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	if (negative)
+		string[0] = '-';
+	string[size] = '\0';
+	return (string);
+}
+
+char			*ft_itoa(int n)
+{
+	char	*ret;
 	size_t	size;
 	long	aux;
 
-	negative = 0;
-	aux = (long)n;
-	if (n < 0)
-	{
-		negative = 1;
-		aux *= -1;
-	}
-	size = 1;
-	while (n /= 10)
-		size++;
-	p_str = NULL;
-	if (!(p_str = my_ft_charalloc(aux, size, negative, p_str)))
+	size = my_countdigits(n);
+	if (!(ret = my_allocatenprepare(size, (n < 0))))
 		return (NULL);
+	if (!n)
+		ret[0] = '0';
+	aux = (n < 0) ? -(long)n : (long)n;
+	size--;
 	while (aux)
 	{
-		p_str[size + negative - 1] = (aux % 10) + '0';
-		size--;
+		ret[size--] = (aux % 10) + '0';
 		aux /= 10;
 	}
-	return (p_str);
+	return (ret);
 }

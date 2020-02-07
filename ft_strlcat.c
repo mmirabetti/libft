@@ -6,13 +6,13 @@
 /*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 11:32:02 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/31 09:57:43 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/05 11:03:12 by mauricio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	mystrnlen(const char *s, size_t maxlen)
+static size_t	my_strnlen(const char *s, size_t maxlen)
 {
 	size_t	i;
 
@@ -33,7 +33,7 @@ size_t			ft_strlcat(char *dst, const char *src, size_t dstsize)
 	srclen = 0;
 	while (src[srclen])
 		srclen++;
-	dstlen = mystrnlen(dst, dstsize);
+	dstlen = my_strnlen(dst, dstsize);
 	if (!dstsize)
 		return (srclen);
 	if (dstlen != dstsize)
