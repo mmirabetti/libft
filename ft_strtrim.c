@@ -6,7 +6,7 @@
 /*   By: mauricio <mmirabet@student.42sp.or...>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 13:28:54 by mauricio          #+#    #+#             */
-/*   Updated: 2020/02/07 17:51:28 by mauricio         ###   ########.fr       */
+/*   Updated: 2020/02/07 18:43:44 by mauricio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	if (!ft_strlen(set))
-		return (ft_substr(s1, 0, 0));
+		return (ft_strdup(s1));
 	begin = -1;
 	end = 0;
 	i = 0;
