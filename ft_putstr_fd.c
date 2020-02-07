@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 14:43:59 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/02/07 14:03:27 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/07 17:44:03 by mauricio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	if (s)
+		while (*s)
+		{
+			write(fd, s, 1);
+			s++;
+		}
 }
