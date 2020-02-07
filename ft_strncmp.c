@@ -3,34 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
+/*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 09:20:41 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/23 15:34:10 by mmirabet         ###   ########.fr       */
+/*   Created: 2020/02/07 16:54:44 by mmirabet          #+#    #+#             */
+/*   Updated: 2020/02/07 17:17:41 by mauricio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-typedef unsigned char	t_unsgch;
-
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+	size_t	i;
+
+	i = 0;
 	if (!n)
 		return (0);
-	if (*(t_unsgch*)s1 == *(t_unsgch*)s2)
-		while (n && *(t_unsgch*)s1 == *(t_unsgch*)s2 && *s1 && *s2)
-		{
-			n--;
-			s1++;
-			s2++;
-		}
-	if (!n)
+	while (i < n && ((unsigned char)s1[i] == (unsigned char)s2[i]) &&
+		(unsigned char)s1[i] && (unsigned char)s2[i])
+		i++;
+	if (i == n)
 		return (0);
-	else if (n && !*s1 && !*s2)
-		return (0);
-	else if (*(t_unsgch*)s1 < *(t_unsgch*)s2)
-		return (-1);
 	else
-		return (1);
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
