@@ -6,7 +6,7 @@
 /*   By: mauricio <mmirabet@student.42sp.or...>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 17:00:21 by mauricio          #+#    #+#             */
-/*   Updated: 2020/02/07 10:12:45 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/07 13:36:19 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ char			*ft_itoa(int n)
 	size--;
 	while (aux)
 	{
-		ret[size--] = (aux % 10) + '0';
+		ret[size] = (aux % 10) + '0';
+		size--;
 		aux /= 10;
 	}
 	return (ret);

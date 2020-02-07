@@ -6,7 +6,7 @@
 #    By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 20:06:06 by mmirabet          #+#    #+#              #
-#    Updated: 2020/02/07 08:03:09 by mauricio         ###   ########.fr        #
+#    Updated: 2020/02/07 13:31:07 by mmirabet         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -25,7 +25,7 @@ SRC			= ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
 			  ft_isascii ft_isprint ft_toupper ft_tolower ft_calloc ft_strdup \
 			  ft_substr ft_strjoin ft_strtrim ft_split ft_itoa ft_strmapi \
 			  ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd ft_isupper\
-			  ft_islower
+			  ft_islower ft_strcpy
 
 SRC_BONUS		= ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back \
 			  ft_lstdelone ft_lstclear ft_lstiter ft_lstmap

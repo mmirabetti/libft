@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmirabet <mmirabet@student.42sp.or...>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/28 14:56:45 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/02/07 14:01:42 by mmirabet         ###   ########.fr       */
+/*   Created: 2020/02/07 13:21:41 by mmirabet          #+#    #+#             */
+/*   Updated: 2020/02/07 14:09:26 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	while (*s)
+	size_t	idx;
+
+	idx = 0;
+	while (src[idx])
 	{
-		write(fd, s, 1);
-		s++;
+		dest[idx] = ((char *)src)[idx];
+		idx++;
 	}
-	write(fd, "\n", 1);
+	dest[idx] = ((char *)src)[idx];
+	return (dest);
 }

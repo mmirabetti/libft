@@ -6,7 +6,7 @@
 /*   By: mauricio <mmirabet@student.42sp.or...>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 07:28:25 by mauricio          #+#    #+#             */
-/*   Updated: 2020/02/07 10:14:29 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/07 13:49:15 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ret[i] = f(i, s[i]);
 		i++;
 	}
+	ret[i] = '\0';
 	return (ret);
 }
