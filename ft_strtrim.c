@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mauricio <mmirabet@student.42sp.or...>     +#+  +:+       +#+        */
+/*   By: mmirabetti <mmirabet@student.42sp.orr.br>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 13:28:54 by mauricio          #+#    #+#             */
-/*   Updated: 2020/02/07 18:43:44 by mauricio         ###   ########.fr       */
+/*   Created: 2020/02/05 13:28:54 by mmirabet          #+#    #+#             */
+/*   Updated: 2020/02/07 18:50:56 by mauricio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
