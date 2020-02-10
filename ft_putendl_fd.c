@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 14:56:45 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/02/07 17:44:54 by mauricio         ###   ########.fr       */
+/*   Updated: 2020/02/10 14:32:28 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (s)
-	{
-		while (*s)
-		{
-			write(fd, s, 1);
-			s++;
-		}
-		write(fd, "\n", 1);
-	}
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

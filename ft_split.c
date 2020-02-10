@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mauricio <mmirabet@student.42sp.or...>     +#+  +:+       +#+        */
+/*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/06 10:10:00 by mauricio          #+#    #+#             */
-/*   Updated: 2020/02/07 10:17:22 by mmirabet         ###   ########.fr       */
+/*   Created: 2020/02/06 10:10:00 by mmirabet          #+#    #+#             */
+/*   Updated: 2020/02/10 17:44:46 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char			**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	idx;
 
-	if (!s || c == '\0')
+	if (!s)
 		return (NULL);
 	count = my_countwords((char *)s, c);
 	if (!(splitted = (char **)malloc(sizeof(char *) * (count + 1))))
@@ -73,7 +73,7 @@ char			**ft_split(char const *s, char c)
 	idx = 0;
 	while (count)
 	{
-		splitted[i] = (char *)my_getnextword((char *)s, c, &idx);
+		splitted[i] = my_getnextword((char *)s, c, &idx);
 		i++;
 		count--;
 	}

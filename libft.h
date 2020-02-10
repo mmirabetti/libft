@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 16:26:52 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/02/07 14:06:21 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/10 19:21:11 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ char				*ft_strnstr(const char *haystack,
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strcpy(char *dest, const char *src);
 int					ft_atoi(const char *str);
+int					ft_isspace(int c);
 int					ft_isupper(int c);
 int					ft_islower(int c);
 int					ft_isalpha(int c);

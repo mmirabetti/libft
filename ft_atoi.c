@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
+/*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 15:36:22 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/24 12:37:53 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/10 19:58:08 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,25 @@
 
 int	ft_atoi(const char *str)
 {
-	long long	i;
-	int			mult;
+	int						mult;
+	unsigned long long int	aux;
 
-	i = 0;
 	mult = 1;
 	if (!*str)
 		return (0);
-	while (*str == '\t' || *str == '\n' || *str == '\r' || *str == '\v' \
-		|| *str == '\f' || *str == ' ' || !*str)
+	while (ft_isspace(*str))
 		str++;
 	if (*str == '-' || *str == '+')
 	{
-		if (*str == '-')
-			mult = -1;
-		if (*str)
-			str++;
-	}
-	while (*str >= '0' && *str <= '9' && *str)
-	{
-		i = (i * 10 + (*str - '0'));
+		mult = (*str == '-') ? -1 : 1;
 		str++;
 	}
-	return ((int)(i * mult));
+	aux = 0;
+	while (ft_isdigit(*str) && *str)
+		aux = (aux * 10 + (*str++ - '0'));
+	if (aux > LONG_MAX && mult == 1)
+		return (-1);
+	if (aux > LONG_MAX && mult == -1)
+		return (0);
+	return ((int)(aux * mult));
 }

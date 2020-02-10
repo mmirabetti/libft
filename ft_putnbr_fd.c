@@ -6,7 +6,7 @@
 /*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 15:01:00 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/28 15:26:15 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/10 18:45:05 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	int	digit;
 
-	digit = n % 10;
-	if (n < 0)
-		digit *= -1;
+	digit = (n < 0) ? -(n % 10) : n % 10;
 	if (n > -10 && n < 10)
 	{
 		if (n < 0)

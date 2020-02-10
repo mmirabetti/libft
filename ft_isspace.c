@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 08:58:12 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/29 09:23:10 by mmirabet         ###   ########.fr       */
+/*   Created: 2020/02/10 19:16:28 by mmirabet          #+#    #+#             */
+/*   Updated: 2020/02/10 20:03:19 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int	ft_isspace(int c)
 {
-	if (lst && f)
-		while (lst)
-		{
-			f(lst->content);
-			lst = lst->next;
-		}
+	if (c == '\t' || c == '\n' || c == '\r' || c == '\v' \
+		|| c == '\f' || c == ' ')
+		return (1);
+	else
+		return (0);
 }

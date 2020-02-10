@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmirabet <mmirabet@student.42sp.o...>      +#+  +:+       +#+        */
+/*   By: mmirabet <mmirabet@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 09:14:43 by mmirabet          #+#    #+#             */
-/*   Updated: 2020/01/22 09:18:37 by mmirabet         ###   ########.fr       */
+/*   Updated: 2020/02/10 14:34:27 by mmirabet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	while (*(s + i))
+	while ((s[i]))
 		i++;
 	return (i);
 }
