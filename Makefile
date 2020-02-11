@@ -11,8 +11,6 @@
 # **************************************************************************** #
 
 NAME		= libft.a
-NAME_SHARED	= libft.so
-
 HEADER		= libft.h
 
 SRCDIR		= .
@@ -61,13 +59,6 @@ bonus:		$(NAME) $(OBJS_BONUS)
 		$(AT) $(AR) $(ARFLAGS) $^
 		$(AT)ranlib $(NAME)
 
-so:		$(NAME_SHARED)
-
-$(NAME_SHARED):	CFLAGS += -fpic
-$(NAME_SHARED):	LDFLAGS += -shared
-$(NAME_SHARED):	$(OBJS) $(OBJS_BONUS)
-		$(CC) $(LDFLAGS) $^ -o $@
-
 clean:
 		$(RM) $(OBJS) $(OBJS_BONUS)
 		$(RM) *~
@@ -77,6 +68,3 @@ fclean:		clean
 
 re:		fclean all
 
-
-print-%: ; @$(error $* is $($*) ($(value $*))
-						(from $(origin $*)))
